@@ -122,18 +122,20 @@ _io = [
     ("sdram_clock", 0, Pins("E14"), IOStandard("LVCMOS33")),
     ("sdram", 0,
         Subsignal("a", Pins(
-            "")),
+            "C20 C19 C13 F13 G13 G15 "
+            "F14 F18 E13 E18 C14 A13")),  # address pin A11 routed but NC on M12L64322A
         Subsignal("dq", Pins(
-            "A19 A20 A21 B18 B21 B22 C22 D20"
-            "D21 D22 E19 E21 E22 F19 F20 F21"
-            "G20 G21 G22 H20 H22 J20 J21 J22"
-            "K21 K22 L20 L21 M20 M21 M22 N20")),
-        Subsignal("we_n",  Pins("")),
-        Subsignal("ras_n", Pins("")),
-        Subsignal("cas_n", Pins("")),
+            "F21 E22 F20 E21 F19 D22 E19 D21 "
+            "K21 L21 K22 M21 L20 M22 N20 M20 "
+            "B18 D20 A19 A21 A20 B21 C22 B22 "
+            "G21 G22 H20 H22 J20 J22 G20 J21 "
+            )),
+        Subsignal("we_n",  Pins("D17")),
+        Subsignal("ras_n", Pins("A14")),
+        Subsignal("cas_n", Pins("D14")),
         #Subsignal("cs_n", Pins("")), # gnd
         #Subsignal("cke",  Pins("")), # 3v3
-        Subsignal("ba",    Pins("")),
+        Subsignal("ba",    Pins("D19 B13")),
         #Subsignal("dm",   Pins("")), # gnd
         IOStandard("LVCMOS33"),
         Misc("SLEWRATE=FAST")
